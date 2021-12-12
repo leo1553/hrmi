@@ -6,7 +6,7 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-      - run: ./utils/buid.bat
+      - run: ./utils/build.bat
 
       - uses: actions/upload-artifact@v2.3.0
         with:
