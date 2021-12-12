@@ -1,0 +1,12 @@
+-- Failure Test
+-- Invalid Outbox
+--
+-- This test is expected to fail.
+-- Trying to output a not expected value.
+--
+
+input 1
+output 2
+
+    INBOX
+    OUTBOX

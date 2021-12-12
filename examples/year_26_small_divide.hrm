@@ -1,0 +1,38 @@
+-- Human Resource Machine - Year 26
+-- Small Divide
+--
+-- For each two inboxes, divide the first by the second.
+-- Do not worry with negative numbers.
+--
+
+inputs
+    9, 2, 9, 2, 2, 5, 0, 4;
+    5, 2, 0, 1, 1, 6, 9, 1
+
+outputs
+    4, 4, 0, 0;
+    2, 0, 0, 9
+
+vars
+    9 = 0
+
+
+
+    JUMP     b
+a:
+    COPYFROM 3
+    OUTBOX
+b:
+    COPYFROM 9
+    COPYTO   3
+    INBOX
+    COPYTO   2
+    INBOX
+    COPYTO   1
+c:
+    COPYFROM 2
+    SUB      1
+    JUMPN    a
+    COPYTO   2
+    BUMPUP   3
+    JUMP     c

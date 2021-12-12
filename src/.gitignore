@@ -1,0 +1,5 @@
+compiler/parser.output
+compiler/parser.tab.c
+compiler/scanner.yy.c
+HRM.layout
+Makefile.win

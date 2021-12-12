@@ -1,0 +1,11 @@
+-- Failure Test
+-- Inbox Overflow
+--
+-- This test is expected to fail.
+-- Trying to read from an inbox that is empty.
+--
+
+input 1
+
+    INBOX
+    INBOX

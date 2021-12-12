@@ -1,0 +1,10 @@
+-- Failure Test
+-- Out of Lines
+--
+-- This test is expected to fail.
+-- Reaching the end of the algorithm without the expected output.
+--
+
+input 1
+
+    INBOX

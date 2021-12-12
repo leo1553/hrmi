@@ -1,0 +1,10 @@
+-- Failure Test
+-- Label Not Found
+--
+-- This test is expected to fail.
+-- The label is not found in the label table.
+--
+
+input 1
+
+    JUMP invalid_label

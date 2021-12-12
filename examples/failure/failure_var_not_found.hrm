@@ -1,0 +1,10 @@
+-- Failure Test
+-- Var Not Found
+--
+-- This test is expected to fail.
+-- The var is not found in the var table.
+--
+
+input 1
+
+    COPYFROM invalid_var

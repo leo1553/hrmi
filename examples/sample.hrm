@@ -1,0 +1,27 @@
+-- HRM Sample
+-- Subtract One
+--
+-- Subtract one for each inbox and send it
+-- to outbox.
+--
+
+------------
+-- Header --
+------------
+inputs
+    1, 2, 3, 4, 5;
+    1, 2, 3, 4, 6
+outputs
+    0, 1, 2, 3, 4;
+    0, 1, 2, 3, 5
+vars
+    one = 1
+
+----------
+-- Body --
+----------
+start:
+    INBOX
+    SUB one
+    OUTBOX
+    JUMP start

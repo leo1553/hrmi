@@ -1,0 +1,10 @@
+-- Failure Test
+-- Empty Hand
+--
+-- This test is expected to fail.
+-- Trying to read from empty hand.
+--
+
+input 1
+
+    COPYTO 0

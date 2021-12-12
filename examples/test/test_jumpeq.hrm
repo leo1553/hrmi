@@ -1,0 +1,19 @@
+-- Command Test
+-- JUMPEQ
+--
+-- This test is expected to pass.
+-- JUMPEQ must jump to the label specified in the second argument if the value
+-- on the first var equals the value on hand.
+--
+
+input 1
+output 1
+vars
+    1 = 1,
+    2 = 2
+
+    INBOX
+    JUMPEQ 1, success
+    COPYFROM 2
+success:
+    OUTBOX
