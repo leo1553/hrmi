@@ -176,7 +176,7 @@ astnode_t *ast_create_header_node(astnode_t *_input, astnode_t *_output, astnode
 }
 astnheader_t *__ast_reset_header_node_data(astnheader_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->input = NULL;
     data->output = NULL;
@@ -257,7 +257,7 @@ astnode_t *ast_create_list_node(astnode_t *_next, astnode_t *_value) {
 }
 astnlist_t *__ast_reset_list_node_data(astnlist_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->next = NULL;
     data->value = NULL;
@@ -329,7 +329,7 @@ astnode_t *ast_create_text_node(char *_text) {
 }
 astntext_t *__ast_reset_text_node_data(astntext_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->text = NULL;
 
@@ -381,7 +381,7 @@ astnode_t *ast_create_line_node(int _line_type, astnode_t *_params) {
 }
 astnline_t *__ast_reset_line_node_data(astnline_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->line_type = 0;
     data->params = NULL;
@@ -447,7 +447,7 @@ astnode_t *ast_create_program_node(astnode_t *_header, astnode_t *_lines) {
 }
 astnprogram_t *__ast_reset_program_node_data(astnprogram_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->header = NULL;
     data->lines = NULL;
@@ -520,7 +520,7 @@ astnode_t *ast_create_var_node(char *_name, char *_value) {
 }
 astnvar_t *__ast_reset_var_node_data(astnvar_t *data) {
     if (data == NULL)
-        return;
+        return NULL;
 
     data->name = NULL;
     data->value = NULL;

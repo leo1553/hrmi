@@ -294,7 +294,7 @@ void __hashtable_dump(FILE *_out_stream, hashtable_t *_table) {
     int i;
     for (i = 0; i < hashtable_count(_table); i++) {
         entry = _table->entries[i];
-        fprintf(_out_stream, "%s: %d\n", entry.key, *(int *)entry.value);
+        fprintf(_out_stream, "%s: %d\n", (char *)entry.key, *(int *)entry.value);
     }
 }
 
