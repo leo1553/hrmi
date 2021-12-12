@@ -74,7 +74,7 @@ bool __hashtable_insert(hashtable_t *hashtable, void *key, void *value, bool is_
                 hashtable->freer(NULL, hashtable->entries[i].value);
             hashtable->entries[i].key = key;
             hashtable->entries[i].value = value;
-            return;
+            return true;
         }
     }
 

@@ -4,11 +4,17 @@ Human Resource Machine (HRM) is a computer game that introduces a simple assembl
 HRM Interpreter is a simple HRM assembly-like language interpreter build with FLEX and BISON.
 
 ### Building
+Building the project requires [cmake](https://cmake.org/download/), [flex](https://github.com/westes/flex) and [bison](https://www.gnu.org/software/bison/).
+
 #### Windows
-A DEV-CPP project is located in `src/HRM.dev`. DEV-CPP will generate the Makefile and build the project.
+To build on Windows execute the build script `utils\build.bat`. The build binary will be located at `build\hrmi.exe`.
+
+A [Dev-C++](https://www.bloodshed.net/) project is located at `src\HRM.dev`.
 
 #### Linux
-Not yet tested.
+To build on Linux execute the build script `utils/build.sh`. The build binary will be located at `build/hrmi`.
+
+A installation script for Debian dependencies is located at `utils/install.sh`.
 
 ### Language
 The interpreted file has two parts: header and body.
