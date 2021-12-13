@@ -13,7 +13,7 @@ jobs:
 
       - name: Build
         run: |
-          set PATH=%PATH%;C:\ProgramData\chocolatey\lib\winflexbison\tools
+          set PATH=%PATH%;"C:\ProgramData\chocolatey\lib\winflexbison\tools"
           cd ${{github.workspace}}\utils
           .\build.bat
 
