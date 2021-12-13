@@ -24,7 +24,7 @@ jobs:
       - name: Move Artifact
         uses: actions/upload-artifact@v2.3.0
         with:
-          name: Artifact
+          name: HRM-Interpreter
           path: ${{github.workspace}}\build\hrmi.exe
 
   ubuntu:
@@ -45,11 +45,11 @@ jobs:
       - name: Move Artifact
         uses: actions/download-artifact@v2.1.0
         with:
-          name: Artifact
-          path: ${{github.workspace}}/build/hrmi.exe
+          name: HRM-Interpreter
+          path: ${{github.workspace}}/build/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2.3.0
         with:
-          name: hrm-interpreter
+          name: HRM-Interpreter
           path: ${{github.workspace}}/build/hrmi*
