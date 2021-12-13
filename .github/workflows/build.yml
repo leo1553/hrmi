@@ -12,8 +12,8 @@ jobs:
         run: |
           choco install winflexbison3
           cd "C:\ProgramData\chocolatey\lib\winflexbison3\tools"
-          move win-flex.exe flex.exe
-          move win-bison.exe bison.exe
+          move win_flex.exe flex.exe
+          move win_bison.exe bison.exe
 
       - name: Build
         run: |
