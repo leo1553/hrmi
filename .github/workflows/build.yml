@@ -38,9 +38,8 @@ jobs:
 
       - name: Build
         run: |
-          ls
           cd ${{github.workspace}}/utils
-          ls
+          sudo chmod 777 build.sh
           ./build.sh
 
       - name: Move Artifact
