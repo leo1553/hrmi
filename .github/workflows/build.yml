@@ -7,7 +7,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: ${{github.workspace}}/utils/build.bat
+      - run: |
+          cd ${{github.workspace}}/utils
+          ./build.bat
       - uses: actions/upload-artifact@v2.3.0
         with:
           name: artefatos
@@ -18,7 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: ${{github.workspace}}/utils/build.sh
+      - run: |
+          cd ${{github.workspace}}/utils
+          ./build.sh
       - uses: actions/download-artifact@v2.1.0
         with:
           name: artefatos
