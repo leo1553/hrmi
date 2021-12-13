@@ -1,5 +1,5 @@
 compiler/parser.output
-compiler/parser.tab.c
+compiler/parser.tab.*
 compiler/scanner.yy.c
 HRM.layout
 Makefile.win
