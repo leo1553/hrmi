@@ -1,0 +1,55 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - name: Install Flex & Bison
+        run: |
+          choco install winflexbison3
+          cd "C:\ProgramData\chocolatey\lib\winflexbison3\tools"
+          move win_flex.exe flex.exe
+          move win_bison.exe bison.exe
+
+      - name: Build
+        run: |
+          $env:Path += ";C:\ProgramData\chocolatey\lib\winflexbison3\tools"
+          cd ${{github.workspace}}\utils
+          .\build.bat
+
+      - name: Move Artifact
+        uses: actions/upload-artifact@v2.3.0
+        with:
+          name: HRM-Interpreter
+          path: ${{github.workspace}}\build\hrmi.exe
+
+  ubuntu:
+    needs: windows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - name: Install Flex & Bison
+        run: sudo apt install flex bison
+
+      - name: Build
+        run: |
+          cd ${{github.workspace}}/utils
+          sudo chmod 777 build.sh
+          ./build.sh
+
+      - name: Move Artifact
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: HRM-Interpreter
+          path: ${{github.workspace}}/build/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.3.0
+        with:
+          name: HRM-Interpreter
+          path: ${{github.workspace}}/build/hrmi*
