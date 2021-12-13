@@ -7,25 +7,25 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: ./utils/build.bat
+      - run: ${{github.workspace}}/utils/build.bat
       - uses: actions/upload-artifact@v2.3.0
         with:
           name: artefatos
-          path: /build/hmri.exe
+          path: ${{github.workspace}}/build/hmri.exe
 
   ubuntu:
     needs: windows
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: ./utils/build.sh
+      - run: ${{github.workspace}}/utils/build.sh
       - uses: actions/download-artifact@v2.1.0
         with:
           name: artefatos
-          path: /build/hmri.exe
+          path: ${{github.workspace}}/build/hmri.exe
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2.3.0
         with:
           name: hrm-interpreter
-          path: /build/hmri*
+          path: ${{github.workspace}}/build/hmri*
