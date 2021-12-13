@@ -9,7 +9,11 @@ jobs:
       - uses: actions/checkout@v2.4.0
 
       - name: Install Flex & Bison
-        run: choco install winflexbison
+        run: |
+          choco install winflexbison
+          ls
+          cd "C:\ProgramData\chocolatey\lib\winflexbison\tools"
+          ls
 
       - name: Build
         run: |
