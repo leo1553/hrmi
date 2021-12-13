@@ -7,12 +7,19 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: |
+
+      - name: Install Flex & Bison
+        run: choco install winflexbison
+
+      - name: Build
+        run: |
           cd ${{github.workspace}}\utils
           .\build.bat
-      - uses: actions/upload-artifact@v2.3.0
+
+      - name: Move Artifact
+        uses: actions/upload-artifact@v2.3.0
         with:
-          name: artefatos
+          name: Artifact
           path: ${{github.workspace}}\build\hmri.exe
 
   ubuntu:
@@ -20,12 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - run: |
+
+      - name: Install Flex & Bison
+        run: npm install flex bison
+
+      - name: Build
+        run: |
           cd ${{github.workspace}}/utils
           ./build.sh
-      - uses: actions/download-artifact@v2.1.0
+
+      - name: Move Artifact
+        uses: actions/download-artifact@v2.1.0
         with:
-          name: artefatos
+          name: Artifact
           path: ${{github.workspace}}/build/hmri.exe
 
       - name: Upload Artifact
