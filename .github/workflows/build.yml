@@ -38,8 +38,10 @@ jobs:
 
       - name: Build
         run: |
+          ls
           cd ${{github.workspace}}/utils
-          sudo ./build.sh
+          ls
+          ./build.sh
 
       - name: Move Artifact
         uses: actions/download-artifact@v2.1.0
