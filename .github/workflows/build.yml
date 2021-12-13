@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v2.4.0
 
       - name: Install Flex & Bison
-        run: npm install flex bison
+        run: sudo apt install flex bison
 
       - name: Build
         run: |
