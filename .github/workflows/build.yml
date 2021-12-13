@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - run: |
-          cd ${{github.workspace}}/utils
-          ./build.bat
+          cd ${{github.workspace}}\utils
+          .\build.bat
       - uses: actions/upload-artifact@v2.3.0
         with:
           name: artefatos
-          path: ${{github.workspace}}/build/hmri.exe
+          path: ${{github.workspace}}\build\hmri.exe
 
   ubuntu:
     needs: windows
