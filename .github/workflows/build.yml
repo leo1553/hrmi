@@ -10,10 +10,10 @@ jobs:
 
       - name: Install Flex & Bison
         run: |
-          choco install winflexbison
-          ls
+          choco install winflexbison3
           cd "C:\ProgramData\chocolatey\lib\winflexbison\tools"
-          ls
+          rename win-flex.exe flex.exe
+          rename win-bison.exe bison.exe
 
       - name: Build
         run: |
